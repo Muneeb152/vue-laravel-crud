@@ -84,10 +84,9 @@
     methods:{
       deleteStudent(studentId)
       {
-        console.log("ID is:"+studentId)
         if(confirm('Are you want to delete this data?'))
         {
-          axios.delete(`http://127.0.0.1:8000/api/students/${studentId}`).then(res=>{
+          axios.delete(`http://127.0.0.1:8000/api/students/${studentId}/delete`).then(res=>{
                 console.log(res.data.message);
                 this.students=[];
                 this.getStudents();
